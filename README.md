@@ -28,6 +28,10 @@
 |:---:|:---:|
 | ![Catppuccin Mocha](Themes/screenshots/catppuccin-mocha.png) | ![Catppuccin Latte](Themes/screenshots/catppuccin-latte.png) |
 
+| Fastfetch |
+|:---:|
+| ![Fastfetch](Themes/screenshots/ff.png) |
+
 ---
 
 ## Features
