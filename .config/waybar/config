@@ -1,0 +1,47 @@
+{
+    "layer": "top",
+    "position":"top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+    "include": [
+        "~/.config/waybar/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json"
+    ],
+
+    "modules-left": [
+        "custom/exit",
+        "idle_inhibitor",
+        "custom/theme",
+        "custom/clipboard",
+        "custom/updates",
+        "cpu",
+        "memory",
+        "custom/appmenu",
+        "custom/quicklink_zen",
+        "custom/quicklink_term",
+        "custom/quicklink_thunar",
+        "custom/quicklink_r",
+        "custom/quicklink_code",
+        "custom/quicklink_teams",
+        "custom/quicklink_excel",
+        "custom/quicklink_word"
+
+    ],
+    
+    "modules-center":[
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "hyprland/window",
+        "mpris",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "clock",
+        "tray"
+    ]
+}

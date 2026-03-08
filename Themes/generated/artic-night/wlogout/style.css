@@ -1,0 +1,46 @@
+/* =====================================================
+ * Artic Night — Wlogout Style
+ * AUTO-GENERATED — do not edit manually.
+ * ===================================================== */
+
+window {
+    background-color: rgba(30, 36, 48, 0.90);
+}
+
+button {
+    background-color: #2e3a50;
+    color: #d8dee9;
+    border-radius: 20px;
+    border: 3px solid #3b4a63;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:focus, 
+button:active, 
+button:hover {
+    background-color: #88c0d0;
+    color: #1e2430;
+    border: 3px solid #5e9fc9;
+}
+
+/* Specific icon button identifiers (matching layout file) */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

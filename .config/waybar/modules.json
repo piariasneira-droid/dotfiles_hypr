@@ -1,0 +1,215 @@
+{
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": false,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "hyprland/window": {
+    "max-length": 50,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) - Visual Studio Code": "󰨞 $1",
+      "(.*) - foot": " $1"
+    },
+    "separate-outputs": true
+  },
+
+  "mpris": {
+      "format": "{player_icon} {title}",
+      "format-paused": "{status_icon} {title}",
+      "tooltip-format": "Player: {player}\nTitle: {title}\nArtist: {artist}",
+      "tooltip-format-paused": "Paused: {title}",
+      "player-icons": {
+        "default": "󰐊",
+        "mpv": "",
+        "zen-browser": "󰖟" 
+      },
+      "status-icons": {
+        "paused": "󰏤"
+      },
+      "max-length": 35,
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": " off",
+    "format-off": " off",
+    "format-connected": " {num_connections}",
+    "interval": 30,
+    "on-click": "kitty -e ~/.config/hypr/scripts/bluetooth.sh" , 
+    "on-click-right": "rfkill toggle bluetooth",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "Connected devices: {num_connections}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t| Battery: {device_battery_percentage}%",
+    "format-no-controller": ""
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "⚠ Off",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "max-length": 50,
+    "on-click": "kitty nmtui",
+    "on-click-right": "nm-connection-editor"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty btop"
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "on-click": "kitty vtop",
+    "tooltip-format": "RAM Usada: {used:0.2f} G\nTotal: {total:0.2f} G\nSwap Usada: {swapUsed:0.2f} G\nTotal: {swapTotal:0.2f} G"
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/",
+    "on-click": "kitty btop",
+    "tooltip": true,
+    "tooltip-format": "Disk Used: {used} / {total}\n({percentage:0.1f}% used)"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "on-click": "gnome-calendar",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "custom/exit": {
+    "format": "",
+    "on-click": "wlogout"
+  },
+
+  "custom/theme": {
+    "format": "󰏘",
+    "on-click": "bash ~/Themes/switch-theme.sh",
+    "tooltip-format": "Switch theme"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    "scroll-step": 1
+  },
+
+  "battery": {
+    "interval": 1,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+
+  "custom/appmenu": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun",
+    "tooltip-format": "Left: Launcher\nRight: Manual"
+  },
+
+  "custom/updates": {
+    "format": " {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty -e yay -Syu",
+    "signal": 8
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#ff5555'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span color='#ff5555'><s></s></span><span foreground='#ff5555'><sup></sup></span>",
+      "dnd-none": "<span color='#ff5555'><s></s></span>",
+      "inhibited-notification": "<span foreground='#ff5555'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span color='#ff5555'><s></s></span><span foreground='#ff5555'><sup></sup></span>",
+      "dnd-inhibited-none": "<span color='#ff5555'><s></s></span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [],
+    "app_ids_mapping": {},
+    "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+    }
+  },
+
+  "custom/clipboard": {
+    "format": "󰅎",
+    "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+    "tooltip-format": "Clipboard history"
+  }
+}

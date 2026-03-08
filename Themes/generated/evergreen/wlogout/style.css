@@ -1,0 +1,46 @@
+/* =====================================================
+ * Evergreen Forest — Wlogout Style
+ * AUTO-GENERATED — do not edit manually.
+ * ===================================================== */
+
+window {
+    background-color: rgba(26, 36, 33, 0.90);
+}
+
+button {
+    background-color: #2d3b36;
+    color: #d3c6aa;
+    border-radius: 20px;
+    border: 3px solid #3d4f49;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:focus, 
+button:active, 
+button:hover {
+    background-color: #a7c080;
+    color: #1a2421;
+    border: 3px solid #90a955;
+}
+
+/* Specific icon button identifiers (matching layout file) */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

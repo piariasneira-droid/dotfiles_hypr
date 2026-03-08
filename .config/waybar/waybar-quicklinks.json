@@ -1,0 +1,63 @@
+/* -----------------------------------------------------
+ * Waybar Quick links - Hyprland Edition
+ * ----------------------------------------------------- */
+
+{
+    // Zen Browser
+    "custom/quicklink_zen": {
+        "format": "󰖟",
+        "on-click": "zen-browser",
+        "tooltip-format": "Zen Browser"
+    },
+
+    // Thunar File Manager (Izquierdo) & Yazi (Derecho)
+    "custom/quicklink_thunar": {
+        "format": "",
+        "on-click": "thunar",
+        "on-click-right": "kitty -e yazi",
+        "tooltip-format": "I: Thunar | D: Yazi"
+    },
+
+    // Terminal Selector (L: Kitty, R: Foot)
+    "custom/quicklink_term": {
+        "format": "",
+        "on-click": "kitty",
+        "on-click-right": "foot",
+        "tooltip-format": "I: Kitty | D: Foot"
+    },
+
+    // VS Code
+    "custom/quicklink_code": {
+        "format": "󰨞",
+        "on-click": "code",
+        "tooltip-format": "VS Code"
+    },
+
+    // RStudio (Carga tu entorno Pixi molón)
+    "custom/quicklink_r": {
+        "format": "󰟔",
+        "on-click": "~/Documentos/comercio_exterior_bienes/rstudio-pixi.sh",
+        "tooltip-format": "RStudio (Pixi Env)"
+    },
+
+    // Teams (Con Fix de Wayland)
+    "custom/quicklink_teams": {
+        "format": "󰊻",
+        "on-click": "teams-for-linux --enable-features=UseOzonePlatform",
+        "tooltip-format": "Microsoft Teams"
+    },
+
+    // OnlyOffice Spreadsheet (Con Fix de Wayland/Ozone)
+    "custom/quicklink_excel": {
+        "format": "󱎏",
+        "on-click": "onlyoffice-desktopeditors --new:spreadsheet",
+        "tooltip-format": "OnlyOffice Spreadsheet"
+    },
+
+    // OnlyOffice Word (Con Fix de Wayland/Ozone)
+    "custom/quicklink_word": {
+        "format": "󰈙",
+        "on-click": "onlyoffice-desktopeditors --new:word --enable-features=UseOzonePlatform",
+        "tooltip-format": "OnlyOffice Document"
+    }
+}

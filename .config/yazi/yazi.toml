@@ -1,0 +1,74 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_dir_first = true
+
+[opener]
+open = [
+	{ run = 'abrir-rstudio "$@"', orphan = true, desc = "Abrir" }
+]
+folder = [
+	{ run = 'hyprctl dispatch exec "[float; size 60% 60%; center 1] nemo" "$1"', orphan = true, desc = "Nemo" },
+	{ run = 'xdg-open "$@"', orphan = true, desc = "System Open" }
+]
+system = [
+	{ run = 'xdg-open "$@"', orphan = true, desc = "System Default" }
+]
+
+[open]
+prepend_rules = [
+	{ name = "*/", use = "folder" }
+]
+rules = [
+	{ mime = "text/*",           use = "open" },
+	{ mime = "application/json", use = "open" },
+	{ mime = "inode/x-empty",    use = "open" },
+	{ mime = "application/pdf",  use = "system" },
+	{ mime = "image/*",          use = "system" },
+	{ mime = "video/*",          use = "system" },
+	{ mime = "audio/*",          use = "system" },
+	{ mime = "*",                use = "system" }
+]
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
+
+[icon]
+rules = [
+  # Special project folders
+  { name = "comercio_exterior_bienes/", text = "󰗃", fg = "#ecbe7b" },
+  { name = "scr/",                      text = "󰙅", fg = "#51afef" },
+  { name = "data/",                     text = "󰆼", fg = "#98be65" },
+
+  # XDG Spanish folders
+  { name = "Escritorio/",  text = "󰇄", fg = "#7cb8ff" },
+  { name = "Descargas/",   text = "󰇚", fg = "#7cb8ff" },
+  { name = "Documentos/",  text = "󰈙", fg = "#7cb8ff" },
+  { name = "Música/",      text = "󱍙", fg = "#c678dd" },
+  { name = "Imágenes/",    text = "󰉏", fg = "#98be65" },
+  { name = "Vídeos/",      text = "󰎁", fg = "#ff6c6b" },
+  { name = "Plantillas/",  text = "󰉖", fg = "#7cb8ff" },
+  { name = "Público/",     text = "󰉌", fg = "#7cb8ff" },
+
+  # Common folders
+  { name = "Downloads/",   text = "󰇚", fg = "#7cb8ff" },
+  { name = "Documents/",   text = "󰈙", fg = "#7cb8ff" },
+  { name = "Desktop/",     text = "󰇄", fg = "#7cb8ff" },
+  { name = "Music/",       text = "󱍙", fg = "#c678dd" },
+  { name = "Pictures/",    text = "󰉏", fg = "#98be65" },
+  { name = "Videos/",      text = "󰎁", fg = "#ff6c6b" },
+  { name = "Projects/",    text = "󰲋", fg = "#ecbe7b" },
+  { name = "Github/",      text = "󰊤", fg = "#ecbe7b" },
+  { name = "dotfiles/",    text = "󰒓", fg = "#ecbe7b" },
+  { name = ".config/",     text = "󰒓", fg = "#ecbe7b" },
+  { name = ".git/",        text = "󰊤", fg = "#ff6c6b" },
+]
